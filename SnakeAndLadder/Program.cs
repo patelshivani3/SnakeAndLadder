@@ -17,8 +17,7 @@ namespace SnakeAndLadder
             
             //UC2 Random roller die number 
             Random random= new Random();
-            //die = random.Next(1, 7);
-
+           
             // UC4 Check until the winning psition 100
             while (position < 100)
             {
@@ -29,16 +28,24 @@ namespace SnakeAndLadder
                 if (check == 1)
                 {
                     Console.WriteLine("\nLadder");
+                    
                     position = position + die;
-                   // if (position > 100)
-                   // {
-                   //     position = 100;
-                   // }
+                    // UC5 Stay at privious position till the player get exact number
+                    if (position > 100)
+                    {
+                        position = position - die;  
+                    }
+                    else if(position == 100)
+                    {
+                        Console.WriteLine("Player has won");
+                    }
+
                     Console.WriteLine("Die:{0}   Position:{1}  ", die, position);
                 }
                 else if (check == 2)
                 {
                     Console.WriteLine("\nSnake");
+                    
                     position = position - die;
                     if (position < 0)
                     {
