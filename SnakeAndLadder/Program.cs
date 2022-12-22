@@ -13,11 +13,11 @@ namespace SnakeAndLadder
             Console.WriteLine("\nWelcome to Snake and Ladder Program");
 
             //UC1 initialize the position of the player
-            int position = 0 , die =0;
+            int position = 0 , die = 0 , count =0 ;
             
             //UC2 Random roller die number 
             Random random= new Random();
-           
+            
             // UC4 Check until the winning psition 100
             while (position < 100)
             {
@@ -28,7 +28,6 @@ namespace SnakeAndLadder
                 if (check == 1)
                 {
                     Console.WriteLine("\nLadder");
-                    
                     position = position + die;
                     // UC5 Stay at privious position till the player get exact number
                     if (position > 100)
@@ -39,8 +38,8 @@ namespace SnakeAndLadder
                     {
                         Console.WriteLine("Player has won");
                     }
-
                     Console.WriteLine("Die:{0}   Position:{1}  ", die, position);
+                    count++;
                 }
                 else if (check == 2)
                 {
@@ -52,13 +51,16 @@ namespace SnakeAndLadder
                         position = 0;
                     }
                     Console.WriteLine("Die:{0}   Position:{1}  ", die, position);
+                    count++;
                 }
+
                 else
                 {
                     Console.WriteLine("\nNo Play");
                     Console.WriteLine("Player is at position : " + position);
                 }
             }
+            Console.WriteLine("Die count to win the game is : "+count);
             Console.ReadLine();
         }
     }
