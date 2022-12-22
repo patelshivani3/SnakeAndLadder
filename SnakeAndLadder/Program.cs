@@ -11,11 +11,16 @@ namespace SnakeAndLadder
         static void Main(string[] args)
         {
             Console.WriteLine("\nWelcome to Snake and Ladder Program");
-
+           
+            //UC1 initialize the position of the player
             int position = 0;
-            Random random= new Random();
+            
+            //UC2 Random roller die number 
+            Random random = new Random();
             int die = random.Next(1, 7);
-            Console.WriteLine("The value on rolling die : "+die);
+            position = position + die;
+            Console.WriteLine("The value on rolling die is : "+die);
+            Console.WriteLine("Player Position is : "+position);
             Console.ReadLine();
         }
     }
